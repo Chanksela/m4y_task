@@ -7,12 +7,6 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    // get all users
-    public function index()
-    {
-        $users = DB::connection('joomla_db')->table('users')->get();
-        return view('welcome', ['users' => $users]);
-    }
     // store a new user
     public function store(Request $request)
     {
@@ -20,9 +14,9 @@ class UserController extends Controller
             'name' => $request->name,
             'username' => $request->username,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'params' => "{}"
         ]);
-        return redirect('/');
+        return redirect('/signup');
     }
 }
