@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $users = DB::connection('joomla_db')->table('users')->get();
-    return view('welcome', ['users' => $users]);
-});
+Route::get('/', [UserController::class, 'index']);
+Route::post('/users', [UserController::class, 'store']);

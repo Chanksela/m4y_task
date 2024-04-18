@@ -16,19 +16,23 @@
   <form method="POST" action="/users">
     @csrf
     <div>
+      <label>Name</label>
+      <input type="text" name="name" id="name">
+    </div>
+    <div>
       <label>Username</label>
       <input type="text" name="username" id="username">
     </div>
     <div>
       <label>Email</label>
-      <input type="text" name="email" id="email">
+      <input type="email" name="email" id="email">
     </div>
     <div>
       <label>Password</label>
-      <input type="text" name="password" id="password">
+      <input type="password" name="password" id="password">
     </div>
     <div> <label>Confirm Password</label>
-      <input type="text" name="confirm_password" id="confirm_password">
+      <input type="password" name="confirm_password" id="confirm_password">
     </div>
     <button>Register</button>
   </form>
