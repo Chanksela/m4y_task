@@ -16,7 +16,6 @@
       Hello, {{ $userName }}
     </div>
     <div>
-
       <form action="/signout" method="GET">
         <button>Logout</button>
       </form>
