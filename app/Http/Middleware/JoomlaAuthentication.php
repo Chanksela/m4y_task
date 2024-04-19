@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class JoomlaAuthentication
 {
@@ -16,7 +17,6 @@ class JoomlaAuthentication
      */
     public function handle(Request $request, Closure $next)
     {
-
         if(session('joomla_authenticated')) {
             return $next($request);
         }

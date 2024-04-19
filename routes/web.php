@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::redirect('/', '/dashboard');
+
 Route::middleware('guest')->group(function () {
     Route::get('/signup', [AuthController::class, 'signUp'])->name('signup');
     Route::get('/signin', [AuthController::class, 'signIn'])->name('signin');
