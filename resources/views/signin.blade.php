@@ -11,20 +11,8 @@
 
 <body>
   <h1>Login</h1>
-  @if ($errors->any())
-    <div class="alert danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-  @endif
-  @if (session('success'))
-    <div class="alert success">
-      {{ session('success') }}
-    </div>
-  @endif
+  @include('partials.alert')
+  @include('partials.success')
   @include('partials.signin-form')
   @include('partials.alternative-page')
 </body>

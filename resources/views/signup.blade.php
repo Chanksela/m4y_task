@@ -11,6 +11,7 @@
 
 <body>
   <h1>Register</h1>
+  @include('partials.alert')
   @include('partials.signup-form')
   @include('partials.alternative-page')
 </body>
